@@ -1,5 +1,121 @@
-$bg: #ff0;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+$dark: #232326;
+$light: #F3F2F0;
+$white: #FFFFFF;
+$accent: #D40000;
+
+$font: 'Inter', sans-serif;
+
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_desk: 1000px; // 1024
+$r_desk_1150: 1150px;
+$r_desk_hd: 1200px; // 1280
+$r_desk_wxga: 1340px; // 1366
+$r_desk_wxga_xxl: 1500px;
+$r_desk_full: 1600px;
+$r_desk_full_over: 1680px;
+$r_desk_fhd: 1770px; // 1920
+$r_desk_2k: 2480px; // 2560
+$r_desk_4k: 3760px; // 3840
+
+
+html {
+    font-size: 10px;
+}
 
 body {
-    background-color: $bg;
+    background-color: $dark;
+    font: 400 1.4rem/1.3 $font;
+    color: $light;
+}
+
+.container {
+    max-width: $r_desk_hd;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+    &__list {
+        min-width: 482px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link {
+        color: $light;
+        text-decoration: none;
+        transition: .2s;
+        &:hover {
+            color: $accent;
+        }
+    }
+    &__contact {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    &__tel {
+        padding-right: 1.3rem;
+    }
+    &__mail {
+        padding-left: 1.3rem;
+        border-left: 1px solid $light;
+    }
+}
+
+.banner-box {
+    margin-top: 2rem;
+    width: 100%;
+    height: 100%;
+    &__img {
+        height: 310px;
+        width: 100%;
+    }
+}
+
+.main-text {
+    margin: 6.5rem 0;
+    position: relative;
+    &__name {
+        font-size: 2.8rem;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+    &__figure1 {
+        position: absolute;
+        z-index: -2;
+        width: 253px;
+        height: 253px;
+        left: -127px;
+        top: -45px;
+    }
+    &__figure2 {
+        position: absolute;
+        z-index: -1;
+        width: 76px;
+        height: 95px;
+        top: -34px;
+        left: -150px;
+    }
+}
+
+.title {
+    font-size: 7.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
 }
