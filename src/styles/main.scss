@@ -119,3 +119,138 @@ body {
     text-transform: uppercase;
     margin: 0;
 }
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 6rem;
+    position: relative;
+    border-bottom: 1px solid $light;
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &::after {
+            content: '';
+            background-image: url(../images/arrow.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            display: block;
+            background-size: contain;
+            width: 16px;
+            height: 12px;
+        }
+    }
+    &__socials {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    &__item {
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    &__item + &__item {
+        border-left: 1px solid $light;
+        margin-left: 2.8rem;
+        padding-left: 2.8rem;
+    }
+    &__link {
+        text-decoration: none;
+        color: $light;
+    }
+    &__figure {
+        position: absolute;
+        width: 106px;
+        height: 106px;
+        z-index: -1;
+        right: 32px;
+    }
+}
+
+.skills {
+    display: flex;
+    gap: 6.5%;
+    margin-top: 6rem;
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    &__description {
+        margin: 1.5rem 0 0 0;
+        max-width: 238px;
+    }
+}
+
+.about {
+    margin-top: 16rem;
+    display: grid;
+    grid-template-columns: 52.5% 47.5%;
+    &__title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    &__text {
+        font-size: 2.8rem;
+        line-height: 1.5;
+        margin: 0;
+        padding-bottom: 6rem;
+        grid-column: 2 / 3;
+    }
+    &__title, &__text {
+        border-bottom: 1px solid $light;
+    }
+    &__item {
+        grid-area: c;
+        grid-column: 2 / 3;
+        &.about-item {
+            padding-top: 6rem;
+            display: grid;
+            grid-template-columns: 42% 46%;
+            gap: 6rem 7rem;
+        }
+    }
+}
+
+.steps {
+    margin-top: 18rem;
+    &__list {
+        list-style-type: none;
+        counter-reset: item;
+        margin: 0;
+        padding: 0;
+    }
+    &__item {
+        font-size: 2.8rem;
+        position: relative;
+        padding: 3rem 0 3rem 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $light;
+        &::before {
+            content: '0'counter(item);
+            counter-increment: item;
+            position: absolute;
+            top: 31px;
+            left: 0;
+        }
+    }
+    &__item + &__item {
+        border-bottom: 1px solid $light;
+    }
+    &__description {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+}
