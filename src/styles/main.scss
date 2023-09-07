@@ -135,46 +135,6 @@ body {
     padding-bottom: 6rem;
     position: relative;
     border-bottom: 1px solid $light;
-    &__title {
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        position: relative;
-        transition: .2s;
-        & a {
-            color: $light;
-            text-decoration: none;
-            &::after {
-                content: '';
-                width: 100%;
-                height: 1px;
-                background-color: $light;
-                display: block;
-                position: absolute;
-                left: 0;
-                bottom: -6px;
-                opacity: 0;
-            }
-        }
-        &::after {
-            content: '';
-            background-image: url(../images/arrow.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            display: block;
-            background-size: contain;
-            width: 16px;
-            height: 12px;
-        }
-        &:hover {
-            & a::after {
-                opacity: 1;
-            }
-        }
-    }
     &__socials {
         display: flex;
         margin: 0;
@@ -205,6 +165,48 @@ body {
         height: 106px;
         z-index: -1;
         right: 32px;
+    }
+}
+
+.discuss {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    max-width: 167px;
+    transition: .2s;
+    & a {
+        color: $light;
+        text-decoration: none;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $light;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            opacity: 0;
+        }
+    }
+    &::after {
+        content: '';
+        background-image: url(../images/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        background-size: contain;
+        width: 16px;
+        height: 12px;
+    }
+    &:hover {
+        & a::after {
+            opacity: 1;
+        }
     }
 }
 
@@ -293,6 +295,7 @@ body {
         font-size: 1.6rem;
         margin: 0;
         opacity: .8;
+        flex-basis: 56.8rem;
     }
 }
 
@@ -358,4 +361,227 @@ body {
 
 .offer {
     margin-top: 18rem;
+    &__text {
+        font-size: 2.8rem;
+        margin: 0;
+        padding-bottom: 8rem;
+        border-bottom: 1px solid $light;
+    }
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 8rem;
+        gap: 8rem;
+    }
+}
+
+.offer-item {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    &::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &._1::before {
+        background-image: url(../images/money.svg);
+    }
+    &._2::before {
+        background-image: url(../images/experience.svg);
+    }
+    &._3::before {
+        background-image: url(../images/clock.svg);
+    }
+    &._4::before {
+        background-image: url(../images/phone.svg);
+    }
+    &._5::before {
+        background-image: url(../images/code.svg);
+    }
+    &._6::before {
+        background-image: url(../images/file.svg);
+    }
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    &__description {
+        opacity: .8;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+.languages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 18rem;
+    &__item {
+        text-align: center;
+        border: 1px solid rgba($light, .5);
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+            border: 1px solid rgba($light, 1);
+            & .languages__img {
+                filter: grayscale(0);
+            }
+        }
+        &._html {
+            padding: 3.2rem;
+        }
+        &._css, &._jquery {
+            padding: 3.3rem;
+        }
+        &._js {
+            padding: 3.6rem 0 3.5rem;
+        }
+        &._bootstrap {
+            padding: 3.9rem 0 3.8rem;
+        }
+        &._php {
+            padding: 4.7rem 0 4.6rem;
+        }
+        &._vue {
+            padding: 3.9rem;
+        }
+        &._wp {
+            padding: 3.7rem;
+        }
+    }
+    &__img {
+        filter: grayscale(1);
+        transition: .2s;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    transition: .2s;
+    &:hover {
+        & .tooltip__text {
+            visibility: visible;
+        }
+    }
+    &__text {
+        visibility: hidden;
+        width: 232px;
+        background-color: #E31B1B;
+        color: $light;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        position: absolute;
+        z-index: 1;
+        top: 90%;
+        left: 6.5%;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 46%;
+            border-width: 9px;
+            border-style: solid;
+            border-color: transparent transparent #E31B1B transparent;
+        }
+    }
+}
+
+.price {
+    margin-top: 18rem;
+    &__header {
+        position: relative;
+    }
+    &__figure {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        top: -50px;
+        left: -72.5px;
+        z-index: 0;
+    }
+    &__title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        z-index: 1;
+    }
+    &__about {
+        font-size: 2.8rem;
+        line-height: 1.5;
+        margin: 0;
+        padding-bottom: 8rem;
+        opacity: 0.8;
+    }
+    &__item {
+        padding: 6rem 0;
+    }
+    &__header, &__item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $light;
+    }
+    &__item:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    &__text, & .price-item__title {
+        max-width: 37.1rem;
+    }
+    &__about, & .price-item__features {
+        flex-basis: 56.8rem;
+    }
+}
+
+.price-item {
+    &__title {
+        font-size: 2.8rem;
+        margin: 0;
+        max-width: 37.1rem;
+    }
+    &__description {
+        font-size: 1.6rem;
+        font-weight: 500;
+        opacity: .8;
+        margin: 2rem 0 7.5rem;
+    }
+    &__head {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    &__list {
+        padding-left: 1.75rem;
+        margin: 2rem 0 4rem;
+    }
+    &__item {
+        font-size: 1.6rem;
+        opacity: .8;
+    }
+    &__item, &__item {
+        margin-top: 1rem;
+    }
+    &__cost {
+        font-size: 4.2rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 0;
+    }
+    &__figure {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: -20px;
+        left: -50px;
+        z-index: -1;
+    }
 }
