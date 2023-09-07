@@ -35,6 +35,12 @@ body {
     color: $light;
 }
 
+.main {
+    &__dark {
+        background: linear-gradient(180deg, #141416 0%, rgba(20, 20, 22, 0.00) 100%);
+    }
+}
+
 .container {
     max-width: $r_desk_hd;
     margin: 0 auto;
@@ -118,6 +124,8 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     margin: 0;
+    z-index: 2;
+    position: relative;
 }
 
 .contact {
@@ -134,6 +142,23 @@ body {
         display: flex;
         align-items: center;
         gap: 1rem;
+        position: relative;
+        transition: .2s;
+        & a {
+            color: $light;
+            text-decoration: none;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: $light;
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                opacity: 0;
+            }
+        }
         &::after {
             content: '';
             background-image: url(../images/arrow.svg);
@@ -143,6 +168,11 @@ body {
             background-size: contain;
             width: 16px;
             height: 12px;
+        }
+        &:hover {
+            & a::after {
+                opacity: 1;
+            }
         }
     }
     &__socials {
@@ -164,6 +194,10 @@ body {
     &__link {
         text-decoration: none;
         color: $light;
+        transition: .2s;
+        &:hover {
+            color: $accent;
+        }
     }
     &__figure {
         position: absolute;
@@ -187,6 +221,7 @@ body {
     &__description {
         margin: 1.5rem 0 0 0;
         max-width: 238px;
+        opacity: .8;
     }
 }
 
@@ -206,6 +241,7 @@ body {
         margin: 0;
         padding-bottom: 6rem;
         grid-column: 2 / 3;
+        opacity: .8;
     }
     &__title, &__text {
         border-bottom: 1px solid $light;
@@ -213,12 +249,16 @@ body {
     &__item {
         grid-area: c;
         grid-column: 2 / 3;
-        &.about-item {
-            padding-top: 6rem;
-            display: grid;
-            grid-template-columns: 42% 46%;
-            gap: 6rem 7rem;
-        }
+    }
+}
+
+.about-item {
+    padding-top: 6rem;
+    display: grid;
+    grid-template-columns: 42% 46%;
+    gap: 6rem 7rem;
+    &__description {
+        opacity: .8;
     }
 }
 
@@ -252,5 +292,70 @@ body {
     &__description {
         font-size: 1.6rem;
         margin: 0;
+        opacity: .8;
     }
+}
+
+.portfolio {
+    margin-top: 18rem;
+    &__figure {
+        position: absolute;
+        z-index: -1;
+        width: 465px;
+        height: 465px;
+        top: -315px;
+        right: 390px;
+    }
+    &__items {
+        margin-top: 14.4rem;
+        position: relative;
+        z-index: 1;
+    }
+    &__item {
+        border-bottom: 1px solid $light;
+        padding: 6rem 0;
+    }
+}
+
+.portfolio-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    &__list {
+        list-style-type: none;
+        margin: 4rem 0;
+        padding: 0;
+        font-size: 1.8rem;
+        opacity: .8;
+    }
+    &__item {
+        position: relative;
+        padding-left: 2.5rem;
+        &::before {
+            position: absolute;
+            content: '—';
+            left: 0;
+        }
+    }
+    &__item + &__item {
+        margin-top: 1rem;
+    }
+    &__time {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    &__img {
+        width: 560px;
+        height: auto;
+    }
+}
+
+.offer {
+    margin-top: 18rem;
 }
