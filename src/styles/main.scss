@@ -49,6 +49,13 @@ body {
 }
 
 .header {
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
+    // box-sizing: border-box;
+    // max-width: inherit;
+    // background: #232326;
+    // z-index: 99999999;
     display: flex;
     justify-content: space-between;
     padding: 4rem 0;
@@ -85,6 +92,7 @@ body {
 
 .banner-box {
     margin-top: 2rem;
+    // margin-top: 12.8rem;
     width: 100%;
     height: 100%;
     &__img {
@@ -126,6 +134,13 @@ body {
     margin: 0;
     z-index: 2;
     position: relative;
+    &_mini {
+        font-size: 2.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        z-index: 1;
+    }
 }
 
 .contact {
@@ -135,12 +150,20 @@ body {
     padding-bottom: 6rem;
     position: relative;
     border-bottom: 1px solid $light;
-    &__socials {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
+    &__figure {
+        position: absolute;
+        width: 106px;
+        height: 106px;
+        z-index: -1;
+        right: 32px;
     }
+}
+
+.socials {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
     &__item {
         &:first-child {
             margin-left: 0;
@@ -158,13 +181,6 @@ body {
         &:hover {
             color: $accent;
         }
-    }
-    &__figure {
-        position: absolute;
-        width: 106px;
-        height: 106px;
-        z-index: -1;
-        right: 32px;
     }
 }
 
@@ -220,7 +236,7 @@ body {
         text-transform: uppercase;
         margin: 0;
     }
-    &__description {
+    &__desc {
         margin: 1.5rem 0 0 0;
         max-width: 238px;
         opacity: .8;
@@ -231,17 +247,7 @@ body {
     margin-top: 16rem;
     display: grid;
     grid-template-columns: 52.5% 47.5%;
-    &__title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin: 0;
-    }
     &__text {
-        font-size: 2.8rem;
-        line-height: 1.5;
-        margin: 0;
-        padding-bottom: 6rem;
         grid-column: 2 / 3;
         opacity: .8;
     }
@@ -259,10 +265,18 @@ body {
     display: grid;
     grid-template-columns: 42% 46%;
     gap: 6rem 7rem;
-    &__description {
+    &__desc {
         opacity: .8;
     }
 }
+
+.description {
+    font-size: 2.8rem;
+    line-height: 1.5;
+    margin: 0;
+    padding-bottom: 6rem;
+}
+
 
 .steps {
     margin-top: 18rem;
@@ -291,7 +305,7 @@ body {
     &__item + &__item {
         border-bottom: 1px solid $light;
     }
-    &__description {
+    &__desc {
         font-size: 1.6rem;
         margin: 0;
         opacity: .8;
@@ -362,8 +376,6 @@ body {
 .offer {
     margin-top: 18rem;
     &__text {
-        font-size: 2.8rem;
-        margin: 0;
         padding-bottom: 8rem;
         border-bottom: 1px solid $light;
     }
@@ -411,7 +423,7 @@ body {
         font-weight: 600;
         margin: 0;
     }
-    &__description {
+    &__desc {
         opacity: .8;
         margin-top: 1rem;
         margin-bottom: 0;
@@ -508,17 +520,7 @@ body {
         left: -72.5px;
         z-index: 0;
     }
-    &__title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin: 0;
-        z-index: 1;
-    }
-    &__about {
-        font-size: 2.8rem;
-        line-height: 1.5;
-        margin: 0;
+    &__text {
         padding-bottom: 8rem;
         opacity: 0.8;
     }
@@ -534,10 +536,10 @@ body {
         padding-bottom: 0;
         border-bottom: none;
     }
-    &__text, & .price-item__title {
+    &__title, & .price-item__title {
         max-width: 37.1rem;
     }
-    &__about, & .price-item__features {
+    &__text, & .price-item__features {
         flex-basis: 56.8rem;
     }
 }
@@ -546,9 +548,8 @@ body {
     &__title {
         font-size: 2.8rem;
         margin: 0;
-        max-width: 37.1rem;
     }
-    &__description {
+    &__desc {
         font-size: 1.6rem;
         font-weight: 500;
         opacity: .8;
@@ -589,7 +590,7 @@ body {
 .form {
     margin-top: 18rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 52.5% 47.5%;
     position: relative;
     z-index: 1;
     &__figure1 {
@@ -609,27 +610,20 @@ body {
         left: -190px;
     }
     &__title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin: 0;
         max-width: 275px;
     }
-    &__desc {
-        font-size: 2.8rem;
-        line-height: 1.5;
-        margin: 0;
-        padding-bottom: 6rem;
-    }
-    &__titlebox, &__desc {
+    &__header, &__text {
         border-bottom: 1px solid $light;
     }
-    & .contact__socials {
+    & .socials {
         align-self: end;
     }
     &__box {
         padding-top: 6rem;
     }
+}
+
+.discuss-window {
     &__item {
         margin-bottom: 2rem;
     }
@@ -674,41 +668,17 @@ body {
     }
 }
 
-.footer {
-    margin-top: 13rem;
-    border-top: 1px solid $light;
-    &__nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 6.1rem 0 4rem;
-    }
-    &__bottom {
-        font-size: 1.2rem;
-        color: rgba($light, .3);
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 4.2rem;
-    }
-    &__link {
-        color: rgba($light, .3);
-        transition: .2s;
-        &:hover {
-            color: rgba($light, 1);
-        }
-    }
-}
-
 .drop {
     display: block;
     position: relative;
-    & input {
-        display:none;
-        &:checked{
-            & ~ .drop-items{
+    &__input {
+        display: none;
+        &:checked {
+            & ~ .drop__items{
             opacity: 1;
             max-height: 400px;
             }
-            & ~ .control{       
+            & ~ .drop__control{       
             z-index:99;
             background: rgba($light, .1);
             &:after{
@@ -721,8 +691,7 @@ body {
             }
         }
     }
-    
-    & .control {
+    &__control {
         color: $light;
         display: flex;
         justify-content: space-between;
@@ -746,8 +715,7 @@ body {
             transition: transform .2s ease;
         }  
     }
-    
-    & .drop-items{
+    &__items {
         position: absolute;
         top: 100%;    
         width: 100%;
@@ -761,9 +729,10 @@ body {
         z-index: 99;
         box-sizing: border-box;
         font-size: 1.2rem;
-        & .item-drop {
-            list-style:none;
-            & a {        
+    }
+    &__item {
+        list-style:none;
+        & a {        
             display: block;
             color: rgba($light, .4);
             text-decoration: none;
@@ -771,13 +740,11 @@ body {
             &:hover {
                 color: rgba($light, 1);
             }     
-            }
         }
-        & .item-drop + .item-drop {
-            margin-top: 1.7rem;
-        }
-      }
-
+    }
+    & .drop__item + .drop__item {
+        margin-top: 1.7rem;
+    }
     & .overlay-close {
       position: fixed;    
       top: 0;
@@ -787,5 +754,29 @@ body {
       z-index: 9;
       transform: translate(100%,0);
       pointer-events: none;
+    }
+}
+
+.footer {
+    margin-top: 13rem;
+    border-top: 1px solid $light;
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 6.1rem 0 4rem;
+    }
+    &__bottom {
+        font-size: 1.2rem;
+        color: rgba($light, .3);
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 4.2rem;
+    }
+    &__link {
+        color: rgba($light, .3);
+        transition: .2s;
+        &:hover {
+            color: rgba($light, 1);
+        }
     }
 }
