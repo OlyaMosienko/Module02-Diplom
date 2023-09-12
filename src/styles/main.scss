@@ -42,23 +42,27 @@ body {
 }
 
 .container {
-    max-width: $r_desk_hd;
+    max-width: 1140px;
     margin: 0 auto;
     padding-left: 30px;
     padding-right: 30px;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: inherit;
+    background: $dark;
+    z-index: 99999999;
+}
+
 .header {
-    // position: fixed;
-    // top: 0;
-    // width: 100%;
-    // box-sizing: border-box;
-    // max-width: inherit;
-    // background: #232326;
-    // z-index: 99999999;
     display: flex;
     justify-content: space-between;
-    padding: 4rem 0;
+    align-items: center;
+    padding: 4.2rem 0;
     &__list {
         min-width: 482px;
         margin: 0;
@@ -71,6 +75,7 @@ body {
         color: $light;
         text-decoration: none;
         transition: .2s;
+        padding: .3rem 0;
         &:hover {
             color: $accent;
         }
@@ -91,8 +96,7 @@ body {
 }
 
 .banner-box {
-    margin-top: 2rem;
-    // margin-top: 12.8rem;
+    margin-top: 12.5rem;
     width: 100%;
     height: 100%;
     &__img {
@@ -102,7 +106,7 @@ body {
 }
 
 .main-text {
-    margin: 6.5rem 0;
+    margin: 11.7rem 0 10rem;
     position: relative;
     &__name {
         font-size: 2.8rem;
@@ -115,15 +119,15 @@ body {
         width: 253px;
         height: 253px;
         left: -127px;
-        top: -45px;
+        top: -57px;
     }
     &__figure2 {
         position: absolute;
         z-index: -1;
         width: 76px;
-        height: 95px;
-        top: -34px;
-        left: -150px;
+        height: 72px;
+        top: -20px;
+        left: -155px;
     }
 }
 
@@ -131,6 +135,7 @@ body {
     font-size: 7.4rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 2.2px;
     margin: 0;
     z-index: 2;
     position: relative;
@@ -138,6 +143,7 @@ body {
         font-size: 2.8rem;
         font-weight: 700;
         text-transform: uppercase;
+        letter-spacing: .84px;
         margin: 0;
         z-index: 1;
     }
@@ -147,7 +153,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 6rem;
+    padding-bottom: 5.7rem;
     position: relative;
     border-bottom: 1px solid $light;
     &__figure {
@@ -155,7 +161,7 @@ body {
         width: 106px;
         height: 106px;
         z-index: -1;
-        right: 32px;
+        right: 37px;
     }
 }
 
@@ -172,9 +178,10 @@ body {
     &__item + &__item {
         border-left: 1px solid rgba($light, .5);
         margin-left: 2.8rem;
-        padding-left: 2.8rem;
+        padding: 0.1rem 0 0.1rem 2.75rem;
     }
     &__link {
+        font-size: 1.6rem;
         text-decoration: none;
         color: $light;
         transition: .2s;
@@ -190,9 +197,9 @@ body {
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.75rem;
     position: relative;
-    max-width: 167px;
+    max-width: 175px;
     transition: .2s;
     & a {
         color: $light;
@@ -228,25 +235,27 @@ body {
 
 .skills {
     display: flex;
-    gap: 6.5%;
-    margin-top: 6rem;
+    gap: 4.5%;
+    margin-top: 6.25rem;
     &__title {
         font-size: 1.6rem;
         font-weight: 700;
         text-transform: uppercase;
+        letter-spacing: .48px;
         margin: 0;
     }
     &__desc {
-        margin: 1.5rem 0 0 0;
+        margin: 1.75rem 0 0 0;
+        line-height: 1.5;
         max-width: 238px;
         opacity: .8;
     }
 }
 
 .about {
-    margin-top: 16rem;
+    margin-top: 18rem;
     display: grid;
-    grid-template-columns: 52.5% 47.5%;
+    grid-template-columns: 51% 49%;
     &__text {
         grid-column: 2 / 3;
         opacity: .8;
@@ -263,9 +272,14 @@ body {
 .about-item {
     padding-top: 6rem;
     display: grid;
-    grid-template-columns: 42% 46%;
-    gap: 6rem 7rem;
+    grid-template-columns: 40% 47%;
+    gap: 6rem 6.5rem;
+    &__title {
+        margin: 0;
+    }
     &__desc {
+        margin: 2.4rem 0 0;
+        line-height: 1.5;
         opacity: .8;
     }
 }
@@ -279,7 +293,7 @@ body {
 
 
 .steps {
-    margin-top: 18rem;
+    margin-top: 17.5rem;
     &__list {
         list-style-type: none;
         counter-reset: item;
@@ -289,7 +303,7 @@ body {
     &__item {
         font-size: 2.8rem;
         position: relative;
-        padding: 3rem 0 3rem 8rem;
+        padding: 3.2rem 0 3.3rem 7.3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -298,7 +312,7 @@ body {
             content: '0'counter(item);
             counter-increment: item;
             position: absolute;
-            top: 31px;
+            top: 33px;
             left: 0;
         }
     }
@@ -309,19 +323,22 @@ body {
         font-size: 1.6rem;
         margin: 0;
         opacity: .8;
-        flex-basis: 56.8rem;
+        flex-basis: 56rem;
     }
 }
 
 .portfolio {
-    margin-top: 18rem;
+    margin-top: 17.5rem;
+    &__title .title {
+        letter-spacing: normal;
+    }
     &__figure {
         position: absolute;
         z-index: -1;
         width: 465px;
         height: 465px;
-        top: -315px;
-        right: 390px;
+        top: -326px;
+        right: 330px;
     }
     &__items {
         margin-top: 14.4rem;
@@ -330,14 +347,16 @@ body {
     }
     &__item {
         border-bottom: 1px solid $light;
-        padding: 6rem 0;
+        padding: 6rem 0 5.4rem;
     }
 }
 
 .portfolio-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    &__text {
+        margin-top: 4rem;
+    }
     &__title {
         font-size: 2.8rem;
         font-weight: 700;
@@ -345,22 +364,22 @@ body {
     }
     &__list {
         list-style-type: none;
-        margin: 4rem 0;
+        margin: 4.5rem 0;
         padding: 0;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         opacity: .8;
     }
     &__item {
         position: relative;
-        padding-left: 2.5rem;
+        padding-left: 1.2rem;
         &::before {
             position: absolute;
-            content: '—';
+            content: '-';
             left: 0;
         }
     }
     &__item + &__item {
-        margin-top: 1rem;
+        margin-top: 1.3rem;
     }
     &__time {
         font-size: 1.6rem;
@@ -377,24 +396,25 @@ body {
     margin-top: 18rem;
     &__text {
         padding-bottom: 8rem;
-        border-bottom: 1px solid $light;
+        max-width: 875px;
     }
     &__box {
+        border-top: 1px solid $light;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin-top: 8rem;
-        gap: 8rem;
+        padding-top: 8rem;
+        gap: 7.5rem 1rem;
     }
 }
 
 .offer-item {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 3.8rem;
     &::before {
         content: '';
         display: block;
-        width: 50px;
+        width: 70px;
         height: 40px;
         background-repeat: no-repeat;
         background-position: center;
@@ -402,6 +422,7 @@ body {
     }
     &._1::before {
         background-image: url(../images/money.svg);
+        width: 55px;
     }
     &._2::before {
         background-image: url(../images/experience.svg);
@@ -411,12 +432,14 @@ body {
     }
     &._4::before {
         background-image: url(../images/phone.svg);
+        width: 55px;
     }
     &._5::before {
         background-image: url(../images/code.svg);
     }
     &._6::before {
         background-image: url(../images/file.svg);
+        width: 60px;
     }
     &__title {
         font-size: 1.6rem;
@@ -427,6 +450,7 @@ body {
         opacity: .8;
         margin-top: 1rem;
         margin-bottom: 0;
+        line-height: 1.5;
     }
 }
 
@@ -446,25 +470,25 @@ body {
             }
         }
         &._html {
-            padding: 3.2rem;
+            padding: 3.2rem 0 2rem;
         }
         &._css, &._jquery {
-            padding: 3.3rem;
+            padding: 3.3rem 0 2rem;
         }
         &._js {
-            padding: 3.6rem 0 3.5rem;
+            padding: 3.6rem 0 2.75rem;
         }
         &._bootstrap {
-            padding: 3.9rem 0 3.8rem;
+            padding: 3.9rem 0 2.8rem;
         }
         &._php {
-            padding: 4.7rem 0 4.6rem;
+            padding: 4.7rem 0 3.6rem;
         }
         &._vue {
-            padding: 3.9rem;
+            padding: 3.9rem 0 2rem;
         }
         &._wp {
-            padding: 3.7rem;
+            padding: 3.7rem 0 3rem;
         }
     }
     &__img {
@@ -494,7 +518,7 @@ body {
         position: absolute;
         z-index: 1;
         top: 90%;
-        left: 6.5%;
+        left: 4%;
         &::after {
             content: '';
             position: absolute;
@@ -508,7 +532,7 @@ body {
 }
 
 .price {
-    margin-top: 18rem;
+    margin-top: 18.5rem;
     &__header {
         position: relative;
     }
@@ -516,16 +540,16 @@ body {
         position: absolute;
         width: 140px;
         height: 140px;
-        top: -50px;
-        left: -72.5px;
+        top: -53px;
+        left: -71.5px;
         z-index: 0;
     }
     &__text {
-        padding-bottom: 8rem;
+        padding-bottom: 7.5rem;
         opacity: 0.8;
     }
     &__item {
-        padding: 6rem 0;
+        padding: 6rem 0 6.3rem;
     }
     &__header, &__item {
         display: flex;
@@ -540,7 +564,7 @@ body {
         max-width: 37.1rem;
     }
     &__text, & .price-item__features {
-        flex-basis: 56.8rem;
+        flex-basis: 56rem;
     }
 }
 
@@ -548,21 +572,22 @@ body {
     &__title {
         font-size: 2.8rem;
         margin: 0;
+        line-height: 1.5;
     }
     &__desc {
         font-size: 1.6rem;
         font-weight: 500;
         opacity: .8;
-        margin: 2rem 0 7.5rem;
+        margin: 2.2rem 0 8rem;
     }
     &__head {
         font-size: 1.6rem;
         font-weight: 700;
-        margin: 0;
+        margin: .2rem 0 0;
     }
     &__list {
-        padding-left: 1.75rem;
-        margin: 2rem 0 4rem;
+        padding-left: 1.5rem;
+        margin: 3rem 0 5rem;
     }
     &__item {
         font-size: 1.6rem;
@@ -581,16 +606,16 @@ body {
         position: absolute;
         width: 90px;
         height: 90px;
-        top: -20px;
-        left: -50px;
+        top: -19px;
+        left: -45px;
         z-index: -1;
     }
 }
 
 .form {
-    margin-top: 18rem;
+    margin-top: 18.5rem;
     display: grid;
-    grid-template-columns: 52.5% 47.5%;
+    grid-template-columns: 51% 49%;
     position: relative;
     z-index: 1;
     &__figure1 {
@@ -598,40 +623,44 @@ body {
         z-index: -2;
         width: 300px;
         height: 300px;
-        top: -40px;
-        left: -160px;
+        top: -32px;
+        left: -153px;
     }
     &__figure2 {
         position: absolute;
         z-index: -1;
         width: 73px;
-        height: 91px;
-        top: 15px;
-        left: -190px;
+        height: 66px;
+        top: 27px;
+        left: -181px;
     }
     &__title {
-        max-width: 275px;
+        max-width: 290px;
+        line-height: 1.5;
     }
     &__header, &__text {
         border-bottom: 1px solid $light;
+    }
+    &__text {
+        padding-bottom: 5.7rem;
     }
     & .socials {
         align-self: end;
     }
     &__box {
-        padding-top: 6rem;
+        padding-top: 6.1rem;
     }
 }
 
 .discuss-window {
     &__item {
-        margin-bottom: 2rem;
+        margin-bottom: 2.2rem;
     }
     &__label {
         font-size: 1.2rem;
         opacity: .8;
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
     }
     &__input {
         background: rgba($light, .1);
@@ -641,7 +670,7 @@ body {
         color: $light;
         width: 100%;
         box-sizing: border-box;
-        padding: 2.3rem 2rem 2.4rem;
+        padding: 2.5rem 1.8rem 2.5rem;
         transition: .2s;
         &::placeholder {
             color: rgba($light, .15);
@@ -659,8 +688,8 @@ body {
         color: $light;
         font-size: 1.6rem;
         cursor: pointer;
-        padding: 2.1rem 0 2rem;
-        margin-top: 2rem;
+        padding: 2.2rem 0 2.3rem;
+        margin-top: 1.8rem;
         transition: .2s;
         &:hover {
             background-color: #EA0E00;
@@ -695,9 +724,10 @@ body {
         color: $light;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         cursor: pointer;
         font-size: 1.2rem;
-        padding: 2.4rem 2rem 2.3rem;
+        padding: 2.5rem 2.5rem 2.5rem 1.8rem;
         background: rgba($light, .1);
         transition: all .2s ease;
         width: 100%;
@@ -706,8 +736,7 @@ body {
             content:"";
             display: inline-block;      
             height: 1.1rem;
-            width: .7rem;
-            margin-left: .8em;
+            width: 1.2rem;
             background-image: url(../images/arrow-dropdown.svg);
             background-repeat: no-repeat;
             background-position: center;
@@ -763,7 +792,7 @@ body {
     &__nav {
         display: flex;
         justify-content: space-between;
-        padding: 6.1rem 0 4rem;
+        padding: 6.1rem 0 4.3rem;
     }
     &__bottom {
         font-size: 1.2rem;
