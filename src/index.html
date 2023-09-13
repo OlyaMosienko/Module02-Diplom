@@ -39,7 +39,7 @@
                 <h1 class="title">web-разработчик</h1>
             </div>
             <div class="contact">
-                <span class="discuss"><a href="">Обсудить проект</a></span>
+                <span class="discuss"><a href="#popup">Обсудить проект</a></span>
                 <ul class="socials">
                     <li class="socials__item"><a class="socials__link" href="">Vk</a></li>
                     <li class="socials__item"><a class="socials__link" href="">Instagram</a></li>
@@ -220,7 +220,7 @@
                         <div class="price-item__text">
                             <p class="price-item__title">Разработка лэндинга&nbsp;или&nbsp;сайт визитки</p>
                             <p class="price-item__desc">Небольшой сайт состоящий из одной страницы</p>
-                            <span class="discuss"><a href="">Обсудить проект</a></span>
+                            <span class="discuss"><a href="#popup">Обсудить проект</a></span>
                         </div>
                         <div class="price-item__features">
                             <h3 class="price-item__head">Что входит</h3>
@@ -239,7 +239,7 @@
                         <div class="price-item__text">
                             <p class="price-item__title">Разработка корпоративного&nbsp;сайта</p>
                             <p class="price-item__desc">Небольшой сайт с n-количеством страниц</p>
-                            <span class="discuss"><a href="">Обсудить проект</a></span>
+                            <span class="discuss"><a href="#popup">Обсудить проект</a></span>
                         </div>
                         <div class="price-item__features">
                             <h3 class="price-item__head">Что входит</h3>
@@ -257,7 +257,7 @@
                         <div class="price-item__text">
                             <p class="price-item__title">Разработка интернет&nbsp;-&nbsp;магазина</p>
                             <p class="price-item__desc">Полноценный каталог вашей продукции</p>
-                            <span class="discuss"><a href="">Обсудить проект</a></span>
+                            <span class="discuss"><a href="#popup">Обсудить проект</a></span>
                         </div>
                         <div class="price-item__features">
                             <h3 class="price-item__head">Что входит</h3>
@@ -343,5 +343,42 @@
             </div>
         </div>
     </footer>
+    <div id="popup" class="popup">
+        <a href="#" class="popup__close"></a>
+        <div class="popup__header">
+            <h3 class="popup__title">Расскажите о своем проекте</h3>
+            <span class="popup__desc">Заполните все поля, и я свяжусь с вами в&nbsp;ближайшее время</span>
+        </div>
+        <form class="form__box discuss-window">
+            <div class="discuss-window__item">
+                <label for="" class="discuss-window__label">Телефон или почта</label>
+                <input type="text" placeholder="Введите телефон" class="discuss-window__input">
+            </div>
+            <div class="discuss-window__item ">
+                <label for="" class="discuss-window__label">Выберите удобный способ связи</label>
+                <label class="discuss-window__drop drop">
+                    <input class="drop__input" type="checkbox" id="target-drop">
+                    <span class="drop__control">Telegram</span>
+                    <ul class="drop__items">
+                        <li class="drop__item">
+                            <a href="#">WhatsApp</a>
+                        </li>
+                        <li class="drop__item">
+                            <a href="#">Viber</a>
+                        </li>
+                        <li class="drop__item">
+                            <a href="#">Звонок на телефон</a>
+                        </li>
+                        <li class="drop__item">
+                            <a href="#">SMS сообщение</a>
+                        </li>
+                    </ul>
+                    <label for="target-drop" class="overlay-close"></label>
+                </label> 
+            </div>
+            <button type="submit" class="discuss-window__btn">Отправить</button>
+        </form>
+    </div>
+    <a href="#" class="close-popup-overlay"></a>
 </body>
 </html>
