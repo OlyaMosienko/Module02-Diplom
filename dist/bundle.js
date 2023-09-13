@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=document.querySelectorAll(".header__link");for(const o of e)o.addEventListener("click",t);function t(e){e.preventDefault();const t=this.getAttribute("href");document.querySelector(t).scrollIntoView({behavior:"smooth"})}})();
