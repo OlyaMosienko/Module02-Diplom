@@ -259,6 +259,11 @@ header {
     @media (max-width: $r_desk_1150) {
         gap: 3.5%;
     }
+    @media (max-width: $r_desk) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 25px;
+    }
 }
 
 .about {
@@ -295,6 +300,10 @@ header {
     @media (max-width: $r_desk_1150) {
         grid-template-columns: repeat(2, 47%);
         gap: 5rem 5%;
+    }
+    @media (max-width: $r_desk) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 25px;
     }
     &__title {
         margin: 0;
@@ -435,6 +444,9 @@ header {
         grid-template-columns: repeat(3, 1fr);
         padding-top: 8rem;
         gap: 7.5rem 1rem;
+        @media (max-width: $r_desk) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 
@@ -442,6 +454,9 @@ header {
     display: flex;
     align-items: center;
     gap: 3.8rem;
+    @media (max-width: $r_desk_1150) {
+        gap: 2rem;
+    }
     &::before {
         content: '';
         display: block;
