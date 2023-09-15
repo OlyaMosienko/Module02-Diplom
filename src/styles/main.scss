@@ -77,6 +77,10 @@ header {
         list-style-type: none;
         display: flex;
         justify-content: space-between;
+        @media (max-width: $r_desk) {
+            min-width: 415px;
+            gap: 5%;
+        }
     }
     &__link {
         color: $light;
@@ -110,6 +114,9 @@ header {
         height: auto;
         width: 100%;
     }
+    @media (max-width: $r_desk) {
+        margin-top: 10.5rem;
+    }
 }
 
 .main-text {
@@ -119,6 +126,10 @@ header {
         font-size: 2.8rem;
         margin-top: 0;
         margin-bottom: 3rem;
+        @media (max-width: $r_desk) {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
     }
     &__figure1 {
         position: absolute;
@@ -127,6 +138,18 @@ header {
         height: 253px;
         left: -127px;
         top: -57px;
+        @media (max-width: $r_desk_wxga) {
+            width: 240px;
+            height: 240px;
+            left: -60px;
+            top: -57px;
+        }
+        @media (max-width: $r_desk) {
+            width: 220px;
+            height: 220px;
+            left: -70px;
+            top: -55px;
+        }
     }
     &__figure2 {
         position: absolute;
@@ -135,6 +158,21 @@ header {
         height: 72px;
         top: -20px;
         left: -155px;
+        @media (max-width: $r_desk_wxga) {
+            width: 71px;
+            height: 66px;
+            top: -75px;
+            left: -65px;
+        }
+        @media (max-width: $r_desk) {
+            width: 58px;
+            height: 53px;
+            top: 125px;
+            left: 0;
+        }
+    }
+    @media (max-width: $r_desk) {
+        margin: 60px 0 100px;
     }
 }
 
@@ -146,6 +184,9 @@ header {
     margin: 0;
     z-index: 2;
     position: relative;
+    @media (max-width: $r_desk) {
+        font-size: 5.5rem;
+    }
     &_mini {
         font-size: 2.8rem;
         font-weight: 700;
@@ -169,6 +210,12 @@ header {
         height: 106px;
         z-index: -1;
         right: 37px;
+        @media (max-width: $r_desk) {
+            width: 100px;
+            height: 100px;
+            z-index: -1;
+            right: 32px;
+        }
     }
 }
 
@@ -270,6 +317,9 @@ header {
     padding-top: 18rem;
     display: grid;
     grid-template-columns: 51% 49%;
+    @media (max-width: $r_desk) {
+        padding-top: 13rem;
+    }
     &__title {
         @media (max-width: $r_desk_1150) {
             border-bottom: none !important;
@@ -325,6 +375,9 @@ header {
 
 .steps {
     padding-top: 17.5rem;
+    @media (max-width: $r_desk) {
+        padding-top: 14.5rem;
+    }
     &__list {
         list-style-type: none;
         counter-reset: item;
@@ -375,12 +428,21 @@ header {
         width: 465px;
         height: 465px;
         top: -326px;
-        right: 330px;
+        right: 29%;
+        @media (max-width: $r_desk) {
+            width: 400px;
+            height: 400px;
+            top: -267px;
+            right: 0;
+        }
     }
     &__items {
         margin-top: 14.4rem;
         position: relative;
         z-index: 1;
+        @media (max-width: $r_desk) {
+            margin-top: 10rem;
+        }
     }
     &__item {
         border-bottom: 1px solid $light;
@@ -392,10 +454,13 @@ header {
     display: flex;
     justify-content: space-between;
     @media (max-width: $r_desk) {
-        gap: 1%;
+        flex-direction: column;
     }
     &__text {
         margin-top: 4rem;
+        @media (max-width: $r_desk) {
+            margin-bottom: 40px;
+        }
     }
     &__title {
         font-size: 2.8rem;
@@ -434,6 +499,9 @@ header {
 
 .offer {
     margin-top: 18rem;
+    @media (max-width: $r_desk) {
+        margin-top: 15rem;
+    }
     &__text {
         padding-bottom: 8rem;
         max-width: 875px;
@@ -465,6 +533,9 @@ header {
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        @media (max-width: $r_desk_1150) {
+            width: 55px;
+        }
     }
     &._1::before {
         background-image: url(../images/money.svg);
@@ -504,6 +575,9 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 18rem;
+    @media (max-width: $r_desk) {
+        margin-top: 15rem;
+    }
     &__item {
         text-align: center;
         border: 1px solid rgba($light, .5);
@@ -579,6 +653,9 @@ header {
 
 .price {
     padding-top: 18.5rem;
+    @media (max-width: $r_desk) {
+        padding-top: 15.5rem;
+    }
     &__header {
         position: relative;
     }
@@ -665,6 +742,9 @@ header {
     grid-template-columns: 51% 49%;
     position: relative;
     z-index: 1;
+    @media (max-width: $r_desk) {
+        margin-top: 5rem;
+    }
     &__figure1 {
         position: absolute;
         z-index: -2;
@@ -672,6 +752,16 @@ header {
         height: 300px;
         top: 73px;
         left: -153px;
+        @media (max-width: $r_desk_wxga) {
+            width: 280px;
+            height: 280px;
+            top: 40px;
+            left: -110px;
+        }
+        @media (max-width: $r_desk) {
+            top: 20px;
+            left: -60px;
+        }
     }
     &__figure2 {
         position: absolute;
@@ -680,6 +770,18 @@ header {
         height: 66px;
         top: 133px;
         left: -181px;
+        @media (max-width: $r_desk_wxga) {
+            width: 61px;
+            height: 55px;
+            top: 38px;
+            left: 100px;
+        }
+        @media (max-width: $r_desk) {
+            width: 59px;
+            height: 53px;
+            top: 27px;
+            left: 155px;
+        }
     }
     &__title {
         max-width: 290px;
