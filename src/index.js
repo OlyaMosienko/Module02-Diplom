@@ -16,9 +16,27 @@ const links = document.querySelectorAll(".header__link");
             });
         };
 
-// Burger Menu
-let btn = document.querySelector('.burger-btn');
+const btn = document.querySelector('.burger-btn');
+const burger = document.getElementById("burger");
+const menu = document.getElementById("modal-menu");
+const main = document.querySelector(".main");
 
+// Burger Menu
 btn.addEventListener('click', function () {
-    this.classList.toggle('is-active');
+    btn.classList.toggle("active");
+	menu.classList.toggle("active");
+});
+
+// Close Sidebar 
+burger.addEventListener("click", function () {
+	btn.classList.remove("active");
+	menu.classList.remove("active");
+});
+
+// Close Sidebar by Click Outside
+main.addEventListener("click", function () {
+	if (menu.classList.contains("active")) {
+		burger.classList.remove("active");
+		menu.classList.remove("active");
+	}
 });
