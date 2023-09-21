@@ -473,28 +473,36 @@ header {
         counter-reset: item;
         margin: 0;
         padding: 0;
-        display: grid;
-        grid-template-columns: 51% 49%;
+    }
+    &__step {
+        display: flex;
+        align-items: center;
+        gap: 1%;
+        border-top: 1px solid $light;
+        @media (max-width: $r_tab) {
+            align-items: start;
+        }
+    }
+    &__step:last-child {
+        border-bottom: 1px solid $light;
     }
     &__item {
         font-size: 2.8rem;
         padding: 3.2rem 0 3.3rem;
-        display: flex;
-        gap: 3rem;
+        list-style-position: outside;
+        flex-basis: 52%;
         &::before {
             content: '0'counter(item);
             counter-increment: item;
+            margin-right: 4rem;
         }
-    }
-    &__item, &__desc {
-        border-top: 1px solid $light;
-        border-bottom: 1px solid $light;
     }
     &__desc {
         font-size: 1.6rem;
         margin: 0;
-        color: rgba($light, .8);
         padding: 3.2rem 0 3.3rem;
+        color: rgba($light, .8);
+        flex-basis: 47%;
     }
 }
 

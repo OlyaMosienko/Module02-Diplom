@@ -31,12 +31,16 @@ btn.addEventListener('click', function () {
 burger.addEventListener("click", function () {
 	btn.classList.remove("active");
 	menu.classList.remove("active");
+    window.addEventListener('scroll', (e) => {
+        window.scrollTo(0,0);
+    });
 });
 
 // Close Sidebar by Click Outside
 main.addEventListener("click", function () {
 	if (menu.classList.contains("active")) {
 		burger.classList.remove("active");
+        btn.classList.toggle("active");
 		menu.classList.remove("active");
 	}
 });
