@@ -790,6 +790,10 @@ header {
 }
 
 .price-item {
+    gap: 2%;
+    &__text {
+        flex-basis: 49%;
+    }
     &__title {
         font-size: 2.8rem;
         margin: 0;
@@ -1040,6 +1044,22 @@ header {
         display: flex;
         justify-content: space-between;
         padding: 6.1rem 0 4.3rem;
+        & .header__contact {
+            @media (max-width: $r_tab) {
+                font-size: 14px;
+            }
+        }
+        & .header__list {
+            @media (max-width: $r_tab) {
+                font-size: 10px;
+            }
+        }
+        @media (max-width: $r_tab) {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 30px;
+            padding: 43px 0 30px;
+        }
     }
     &__bottom {
         font-size: 1.2rem;
@@ -1047,6 +1067,12 @@ header {
         display: flex;
         justify-content: space-between;
         padding-bottom: 4.2rem;
+        @media (max-width: $r_tab) {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-size: 10px;
+        }
     }
     &__link {
         color: rgba($light, .3);
